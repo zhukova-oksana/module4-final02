@@ -57,7 +57,6 @@
       }
 
       thinkNumber(ballsPlayer);
-      console.log('player', ballsPlayer);
 
       const evenOdd = Boolean(getRandomIntInclusive(1, balls.player) % 2);
 
