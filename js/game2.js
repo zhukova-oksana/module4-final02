@@ -32,8 +32,6 @@
           user2 -= balls;
         }
       }
-      console.log('user1', user1);
-      console.log('user2', user2)
       return [user1, user2];
     }
 
@@ -60,27 +58,24 @@
 
       thinkNumber(ballsPlayer);
       console.log('player', ballsPlayer);
-      
+
       const evenOdd = Boolean(getRandomIntInclusive(1, balls.player) % 2);
-      // console.log('evenOdd', evenOdd);
 
       [balls.player, balls.bot] = [...scoring(balls.player, balls.bot, ballsPlayer, evenOdd)]
-      console.log('player', balls.player, 'bot', balls.bot);
+      // console.log('player', balls.player, 'bot', balls.bot);
 
 
-      check(balls.player, balls.bot);
+      check(balls.bot, balls.player);
 
       if ((balls.player === 0) || (balls.bot === 0)) {
         return;
       }
 
       const thinkNumberBot = getRandomIntInclusive(1, balls.bot);
-      // console.log('thinkNumberBot=', thinkNumberBot);
       const answerPlayer = confirm(`Компьютер загадал число от 1 до ${balls.bot}. Четное?`);
-      // console.log('answerPlayer=', answerPlayer);
 
       [balls.bot, balls.player] = [...scoring(balls.bot, balls.player, thinkNumberBot, answerPlayer)];
-      console.log('bot', balls.bot, 'player', balls.player);
+      // console.log('bot', balls.bot, 'player', balls.player);
 
       check(balls.bot, balls.player);
 
