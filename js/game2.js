@@ -45,7 +45,6 @@
     }
 
     return function start() {
-      let ballsPlayer = +prompt(`Загадай число от 1 до ${balls.player}`);
 
       const thinkNumber = (num) => {
         if ((num > balls.player) || (num < 0) || (num === 0) || (!Number(num)))  {
@@ -55,7 +54,7 @@
           return ballsPlayer;
         }
       }
-
+      let ballsPlayer = 0;
       thinkNumber(ballsPlayer);
 
       const evenOdd = Boolean(getRandomIntInclusive(1, balls.player) % 2);
